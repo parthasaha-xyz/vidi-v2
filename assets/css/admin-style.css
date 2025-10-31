@@ -1,0 +1,147 @@
+/* =================================================================
+ * XIII. ADMIN TAG MANAGEMENT & CHIP INPUT STYLES
+ * ================================================================= */
+
+/* Tag chip style for the management page */
+.tag-chip {
+    display: inline-flex;
+    align-items: center;
+    background-color: #eef2ff; /* Light indigo */
+    color: #4338ca; /* Dark indigo */
+    border-radius: 999px; /* Pill shape */
+    padding: 5px 8px 5px 12px;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+.tag-delete-btn {
+    background-color: #c7d2fe;
+    color: #4f46e5;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    margin-left: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1em;
+    line-height: 1;
+    transition: background-color 0.2s;
+}
+.tag-delete-btn:hover {
+    background-color: #a5b4fc;
+}
+
+/* Chip input styles for the dashboard */
+.tag-input-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    background-color: #f8fafc;
+}
+.tag-text-input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    flex-grow: 1;
+    padding: 4px;
+}
+/* This is the individual chip inside the input */
+.chip {
+    display: inline-flex;
+    align-items: center;
+    background-color: #4f46e5;
+    color: #fff;
+    border-radius: 6px;
+    padding: 4px 8px;
+    font-size: 0.9em;
+}
+.chip-close-btn {
+    background: none;
+    border: none;
+    color: #e0e7ff;
+    margin-left: 6px;
+    cursor: pointer;
+    font-size: 1.2em;
+    padding: 0;
+}
+/* =================================================================
+ * XV. ADMIN VIDEO MANAGEMENT - CARD LAYOUT & FILTERS (REVISED)
+ * ================================================================= */
+
+.admin-video-card {
+    background-color: #fff;
+    border-radius: 15px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden; /* Important for the rounded corners on the video */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: box-shadow 0.2s ease;
+}
+
+.admin-video-card:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+/* New wrapper for the video player */
+.admin-video-embed-wrapper {
+    position: relative;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    background-color: #f1f5f9; /* Fallback for no video link */
+}
+
+.admin-video-embed-wrapper .video-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Extends the generic thumbnail for this specific context */
+.admin-video-embed-wrapper .generic-video-thumb {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border-radius: 0;
+    flex-direction: column;
+}
+
+.admin-video-card-body {
+    padding: 15px 20px;
+    flex-grow: 1;
+}
+
+.admin-video-card-title {
+    color: #1e293b;
+    font-weight: 600;
+    margin-bottom: 0;
+    font-size: 1.1rem;
+    /* Truncate long titles */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.admin-video-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.admin-video-card-footer {
+    padding: 15px 20px;
+    background-color: #f8fafc;
+    border-top: 1px solid #f1f5f9;
+    text-align: right;
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+}

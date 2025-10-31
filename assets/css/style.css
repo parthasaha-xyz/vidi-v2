@@ -1,0 +1,1111 @@
+/* --- Universal Styles & New Light Theme Background --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    /* Subtle, slow-moving light gradient for a dynamic but clean background */
+    background: linear-gradient(-45deg, #e0e7ff, #c7d2fe, #f0f9ff, #e0f2fe);
+    background-size: 400% 400%;
+    animation: lightGradientBG 25s ease infinite;
+    color: #334155; /* Dark gray for text, better than pure black */
+    overflow-x: hidden;
+}
+
+@keyframes lightGradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* --- Login/Signup Glass Card (Light Version) --- */
+.auth-container {
+    display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 1rem;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.6); /* More opaque for readability on light BG */
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(163, 177, 198, 0.37); /* Softer shadow */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    padding: 2.5rem 3rem;
+    width: 100%;
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Premium Form Styling (Light Version) --- */
+.form-control {
+    background: rgba(241, 245, 249, 0.8);
+    border: 1px solid #e2e8f0;
+    color: #334155;
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    transition: all 0.2s ease;
+}
+
+.form-control::placeholder { color: #94a3b8; }
+
+.form-control:focus {
+    background: #fff;
+    color: #334155;
+    border-color: #6366f1; /* Indigo accent color on focus */
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+.btn-custom {
+    /* The "small gradient animated" look */
+    background: linear-gradient(90deg, #4f46e5, #818cf8);
+    background-size: 200% auto;
+    border: none;
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    font-weight: 500;
+    color: #fff;
+    transition: all 0.4s ease;
+}
+
+.btn-custom:hover {
+    background-position: right center; /* Animate the gradient on hover */
+    box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+    transform: translateY(-2px);
+}
+
+.auth-link {
+    color: #4f46e5;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+.auth-link:hover { color: #312e81; }
+
+/* --- Dashboard & Sidebar Styles (Light Version) --- */
+.page-wrapper { display: flex; }
+
+#sidebar {
+    width: 250px;
+    min-height: 100vh;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-right: 1px solid rgba(255, 255, 255, 0.8);
+    transition: margin-left 0.3s ease-in-out;
+    flex-shrink: 0;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.4);
+}
+#sidebar .sidebar-header h3 {
+    color: #4338ca; /* Dark Indigo */
+    font-weight: 600;
+}
+
+#sidebar ul.components { padding: 20px 0; }
+#sidebar ul p { color: #475569; padding: 10px; text-align: center; font-weight: 500;}
+
+#sidebar ul li a {
+    padding: 12px 20px;
+    font-size: 1.05em;
+    display: block;
+    color: #475569; /* Slate gray */
+    transition: all 0.3s;
+    text-decoration: none;
+    border-radius: 0 50px 50px 0;
+    margin-right: 10px;
+    font-weight: 500;
+}
+
+#sidebar ul li a:hover {
+    color: #4f46e5;
+    background: rgba(238, 242, 255, 0.8); /* Very light indigo */
+}
+
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+    color: #fff;
+    background: linear-gradient(90deg, #4f46e5, #818cf8);
+}
+
+
+#content {
+    width: 100%;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* --- Navbar (Light Version) --- */
+.navbar {
+    background: rgba(255, 255, 255, 0.5) !important;
+    backdrop-filter: blur(10px) !important;
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+.nav-link { color: #334155 !important; }
+
+/* --- Stat Cards (Light Version) --- */
+.stat-card {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    padding: 25px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 30px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 32px 0 rgba(163, 177, 198, 0.37);
+}
+
+.stat-card h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    /* Gradient text for modern look */
+    background: -webkit-linear-gradient(45deg, #4f46e5, #a855f7);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.stat-card p {
+    color: #64748b;
+    font-weight: 500;
+}
+
+/* --- Responsive Behavior --- */
+@media (max-width: 991.98px) {
+    #sidebar {
+        margin-left: -250px; /* Hidden by default */
+        position: fixed;
+        top: 0;
+        left: auto;
+        z-index: 999;
+    }
+    #sidebar.active {
+        margin-left: 0; /* Slides in when active */
+    }
+    .overlay {
+        display: block;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 998;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+        pointer-events: none; /* Inactive by default */
+    }
+    .overlay.active {
+        opacity: 1;
+        pointer-events: auto; /* Clickable when active */
+    }
+    #sidebarCollapse {
+        display: block;
+    }
+}
+
+@media (min-width: 992px) {
+    #sidebarCollapse { display: none; }
+    .overlay { display: none !important; }
+}
+
+
+
+/* Password Validation Criteria Styling */
+#password-criteria {
+    font-size: 0.9em;
+}
+
+.criteria {
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+/* Invalid state (default) */
+.criteria.invalid {
+    color: #64748b; /* Slate gray */
+}
+.criteria.invalid i {
+    color: #ef4444; /* Red */
+}
+
+/* Valid state */
+.criteria.valid {
+    color: #1e293b; /* Darker text */
+    font-weight: 500;
+}
+.criteria.valid i {
+    color: #22c55e; /* Green */
+}
+
+/* Style for disabled button */
+.btn-custom:disabled {
+    background: #94a3b8;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+
+/**
+ * =================================================================
+ * V. MOBILE RESPONSIVENESS & PADDING ADJUSTMENTS
+ *
+ * This media query targets devices with a screen width of 767.98px or less.
+ * It reduces padding and adjusts containers to better fit mobile screens,
+ * preventing horizontal overflow and making the UI more compact.
+ * =================================================================
+ */
+@media (max-width: 767.98px) {
+
+    /* 1. Reduce main content padding */
+    #content {
+        padding: 10px; /* Reduced from 20px */
+    }
+
+    /* 2. Reduce padding on dashboard cards and table containers */
+    .stat-card {
+        padding: 15px; /* Reduced from 25px */
+    }
+
+    /* 3. Reduce padding on the login/signup "glass cards" */
+    .auth-container .glass-card {
+        padding: 2rem 1.5rem; /* Reduced from 2.5rem 3rem */
+        margin: 0 10px; /* Add a small margin to prevent touching screen edges */
+    }
+    
+    /* 4. Reduce padding inside modals to give more space to the content */
+    .modal-body {
+        padding: 1rem;
+    }
+
+    .modal {
+    /* Ensure the modal backdrop is a flex container */
+    display: flex !important;
+
+    /* Horizontally center the .modal-dialog within the flex container */
+    justify-content: center;
+
+    /* Vertically center the .modal-dialog within the flex container */
+    align-items: center;
+}
+    
+    /* 5. Ensure responsive tables don't have unnecessary margins */
+    .table-responsive {
+        margin-left: -15px;  /* Counteract the parent's padding */
+        margin-right: -15px; /* Counteract the parent's padding */
+    }
+    
+    .table-responsive .table {
+        margin-bottom: 0;
+    }
+
+    /* 6. Make headings slightly smaller on mobile */
+    h1 {
+        font-size: 1.75rem;
+    }
+}
+
+/**
+ * =================================================================
+ * VI. GLOBAL TABLE & CONTAINER FITTING
+ *
+ * This ensures that when a table is too wide, only the table itself
+ * gets a horizontal scrollbar, not the entire page.
+ * The .table-responsive class is from Bootstrap.
+ * =================================================================
+ */
+.stat-card {
+    /* This is crucial. It ensures that the rounded corners of the card
+       contain the table, even when the table is scrolling horizontally. */
+    overflow: hidden;
+}
+
+.table-responsive {
+    /* Bootstrap provides this, but it's the key to making tables fit.
+       It makes the table scrollable on the X-axis if it's too wide. */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+
+
+
+
+/* =================================================================
+ * VII. AI TOOLBOX CARDS ON DASHBOARD
+ * (Replaces all previous modal and promotional card styles)
+ * ================================================================= */
+
+/* Styles for the tool cards, now directly on the dashboard */
+.tool-card {
+    padding: 20px;
+    height: 100%;
+    min-height: 280px;
+    border-radius: 20px;
+    color: #fff;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* Animation: Start hidden, then fade in */
+    opacity: 0;
+    animation: modalCardFadeIn 0.5s ease-out forwards;
+}
+
+.tool-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.tool-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.tool-icon {
+    font-size: 1.8rem;
+    color: #fff;
+}
+
+.tool-card h5 {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1.3;
+    margin-bottom: 15px;
+}
+
+.tool-card p {
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.5;
+}
+
+/* Gradient Themes for each Tool */
+.tool-card-video {
+    background: linear-gradient(160deg, #a855f7, #d946ef);
+}
+.tool-card-voice {
+    background: linear-gradient(160deg, #22d3ee, #0ea5e9);
+}
+.tool-card-wa {
+    background: linear-gradient(160deg, #4ade80, #22c55e);
+}
+.tool-card-google {
+    background: linear-gradient(160deg, #60a5fa, #3b82f6);
+}
+
+/* REVISED: Staggered animation, now targeting the .ai-tools-grid class */
+.ai-tools-grid > div:nth-child(1) .tool-card { animation-delay: 0.1s; }
+.ai-tools-grid > div:nth-child(2) .tool-card { animation-delay: 0.2s; }
+.ai-tools-grid > div:nth-child(3) .tool-card { animation-delay: 0.3s; }
+.ai-tools-grid > div:nth-child(4) .tool-card { animation-delay: 0.4s; }
+
+/* Keyframes for the fade-in animation (no change needed here) */
+@keyframes modalCardFadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+
+
+/* =================================================================
+ * IX. AD CREDIT "WALLET" CARD STYLING
+ * ================================================================= */
+
+.wallet-card {
+    /* Overriding default stat-card styles */
+    background: linear-gradient(135deg, #1e293b, #0f172a); /* Dark Slate/Navy Gradient */
+    color: #e2e8f0; /* Soft white text */
+    position: relative;
+    overflow: hidden; /* Important for the pattern pseudo-element */
+    display: flex;
+    flex-direction: column; /* Arrange content vertically */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wallet-card:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* A subtle, diagonal line pattern to give texture */
+.wallet-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path d="M 0 5 L 5 0 M 10 20 L 20 10" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></svg>');
+    opacity: 0.5;
+    z-index: 1;
+}
+
+/* Ensure all content appears above the pattern */
+.wallet-header, .wallet-balance, .wallet-footer {
+    position: relative;
+    z-index: 2;
+}
+
+.wallet-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9em;
+}
+
+.wallet-header p {
+    margin: 0;
+    font-weight: 500;
+}
+
+.wallet-header i {
+    font-size: 1.5rem;
+    color: #94a3b8; /* Slate gray for the chip icon */
+}
+
+.wallet-balance {
+    text-align: center;
+    margin: auto 0; /* This pushes it to the vertical center */
+}
+
+.wallet-balance h3 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+    background: -webkit-linear-gradient(45deg, #e2e8f0, #ffffff);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.wallet-footer {
+    margin-top: auto; /* Pushes the footer to the bottom */
+}
+
+.btn-wallet {
+    width: 100%;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    font-weight: 500;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-wallet:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+    color: #fff;
+}
+
+
+
+/* =================================================================
+ * X. AI VIDEO EDITOR UI STYLES
+ * ================================================================= */
+
+.video-preview-wrapper {
+    background-color: #e2e8f0; /* Light grey background */
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px; /* Ensures a good size for the preview area */
+    height: 100%;
+}
+
+.video-preview-wrapper i {
+    font-size: 4rem;
+    color: #cbd5e1; /* Lighter grey for the play icon */
+}
+
+.timeline-placeholder {
+    background-color: #f1f5f9; /* Even lighter grey */
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    color: #64748b; /* Slate grey text */
+    font-weight: 500;
+}
+
+/* 
+ * Style for the Bootstrap Accordion to match the theme.
+ * We use !important to safely override Bootstrap's default styles.
+ */
+.accordion-item {
+    background-color: transparent !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 10px !important;
+    margin-bottom: 10px;
+}
+
+.accordion-button {
+    background-color: #f8fafc !important; /* A very light grey for the button */
+    color: #334155 !important;
+    font-weight: 500;
+    border-radius: 10px !important;
+}
+
+/* This was the incomplete line. It adds the soft blue glow on focus. */
+.accordion-button:focus {
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2) !important;
+    border-color: #e2e8f0 !important;
+}
+
+/* When an accordion is open, ensure the button keeps its rounded corners */
+.accordion-button:not(.collapsed) {
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+/* Remove Bootstrap's default filter on the arrow icon */
+.accordion-button::after {
+    filter: none !important;
+}
+
+
+
+/* =================================================================
+ * XI. AI VIDEO EDITOR - STEP 1 & MODAL STYLES
+ * ================================================================= */
+
+/* Area on main page to show selected video thumbnails */
+.selected-videos-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+    background-color: #f8fafc;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    min-height: 70px;
+}
+.selected-thumbnail {
+    width: 60px;
+    height: 60px;
+    border-radius: 6px;
+    object-fit: cover;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Video Selection Modal Card Styles */
+.video-template-card {
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background-color: #fff;
+}
+.video-template-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.video-thumbnail {
+    width: 100%;
+    height: 150px; /* Consistent height for all thumbnails */
+    object-fit: cover;
+}
+
+.video-title {
+    padding: 10px;
+    font-size: 0.9em;
+    color: #334155;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Overlay and Checkmark for selection */
+.selection-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(79, 70, 229, 0.7); /* Theme color overlay */
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.selection-checkmark {
+    font-size: 3rem;
+    color: #fff;
+}
+
+/* The 'selected' state */
+.video-template-card.selected .selection-overlay {
+    opacity: 1;
+}
+.video-template-card.selected {
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.3);
+}
+
+.generic-video-thumb {
+    width: 120px;
+    height: 80px;
+    background-color: #e2e8f0;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #94a3b8;
+}
+
+/* =================================================================
+ * XVI. USER PROFILE PAGE STYLES
+ * ================================================================= */
+
+.profile-picture-container {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto; /* Center the container */
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%; /* Make it circular */
+    object-fit: cover; /* Prevents image stretching */
+    border: 4px solid #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.upload-overlay {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background-color: #4f46e5;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #fff;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.upload-overlay:hover {
+    transform: scale(1.1);
+}
+
+
+
+/* =================================================================
+ * XVII. CLINIC PROFILE - IMAGE GALLERY
+ * ================================================================= */
+
+.image-placeholder-wrapper {
+    position: relative;
+    width: 100%;
+    background-color: #f1f5f9;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.image-placeholder-wrapper.cover {
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.image-placeholder-wrapper.small {
+    padding-top: 100%; /* 1:1 Aspect Ratio */
+}
+
+.image-placeholder-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crucial for preventing distortion */
+}
+
+
+
+/* =================================================================
+ * XVIII. PUBLIC CLINIC PROFILE STYLES
+ * ================================================================= */
+
+/* Apply the main gradient background to the public page body */
+.public-profile-body {
+    background: linear-gradient(-45deg, #e0e7ff, #c7d2fe, #f0f9ff, #e0f2fe);
+    background-size: 400% 400%;
+    animation: lightGradientBG 25s ease infinite;
+}
+
+.public-navbar {
+    background: rgba(255, 255, 255, 0.5) !important;
+    backdrop-filter: blur(10px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.public-profile-container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.clinic-hero-section {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.cover-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    display: flex;
+    align-items: flex-end;
+    padding: 2rem;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.profile-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    object-fit: cover;
+}
+
+.clinic-title {
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 0;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.clinic-speciality {
+    background-color: rgba(255,255,255,0.2);
+    backdrop-filter: blur(5px);
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 99px;
+    font-weight: 500;
+}
+
+.gallery-image-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 100%; /* 1:1 Aspect Ratio */
+    background-color: #f1f5f9;
+    border-radius: 12px;
+    overflow: hidden;
+}
+.gallery-image-wrapper img {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;
+}
+
+
+
+/* =================================================================
+ * XIX. CAMPAIGN BUILDER - STEP 2 STYLES
+ * ================================================================= */
+
+/* Filter checkbox styling */
+.form-check-label {
+    cursor: pointer;
+}
+
+/* Tag Cloud for filtering */
+.tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.tag-filter-pill {
+    background-color: #eef2ff;
+    color: #4338ca;
+    padding: 5px 12px;
+    border-radius: 99px;
+    font-size: 0.9em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.tag-filter-pill:hover {
+    background-color: #c7d2fe;
+}
+.tag-filter-pill.active {
+    background-color: #4f46e5;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(79, 70, 229, 0.3);
+}
+
+
+
+
+/* --- NEW: Vertical 9:16 Card Styles --- */
+.inspiration-card-vertical {
+    background-color: #fff;
+    border-radius: 15px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.2s ease;
+    position: relative; /* For the selection outline */
+}
+
+/* The main video container with a 9:16 aspect ratio */
+.video-container-vertical {
+    position: relative;
+    width: 100%;
+    padding-top: 177.77%; /* 16 / 9 * 100 = 177.77% */
+    background-color: #f1f5f9;
+    cursor: pointer;
+}
+.video-container-vertical .video-js {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+}
+.video-container-vertical .vjs-poster {
+    background-size: cover;
+}
+
+/* Custom Play Button Overlay */
+.play-button-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none; /* Allows clicks to go through to the video */
+}
+.inspiration-card-vertical:hover .play-button-overlay {
+    opacity: 1; /* Show on hover */
+}
+.play-button-overlay i {
+    font-size: 2.5rem;
+    color: #fff;
+    background-color: rgba(79, 70, 229, 0.8);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Selection Checkmark Overlay */
+.selection-checkmark-overlay {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.8rem;
+    color: #fff;
+    background-color: #4f46e5;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0); /* Hidden by default */
+    transition: transform 0.2s ease-out;
+    z-index: 10;
+}
+
+/* Selection State Styling */
+.inspiration-card-vertical.selected {
+    box-shadow: 0 0 0 3px #4f46e5; /* Main selection indicator */
+}
+.inspiration-card-vertical.selected .selection-checkmark-overlay {
+    transform: scale(1); /* Show the checkmark when selected */
+}
+.inspiration-card-vertical.selected .select-video-btn {
+    background-color: #4f46e5;
+    color: #fff;
+    border-color: #4f46e5;
+}
+
+/* Card Body (Title and Button) */
+.video-card-body-vertical {
+    padding: 15px;
+    text-align: center;
+}
+.video-title-vertical {
+    color: #1e293b;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Disabled button state */
+.btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+}
+
+
+/* =================================================================
+ * XIX. REDESIGNED LOGIN PAGE STYLES
+ * ================================================================= */
+
+/* Ensure the auth container takes the full page height */
+.auth-container.full-page {
+    min-height: 100vh;
+    padding: 1rem;
+}
+
+/* The left-side information panel */
+.info-panel {
+    position: relative; /* For positioning the animated shapes */
+    color: #1e293b;
+    padding-right: 3rem; /* Space between panel and form */
+    overflow: hidden; /* Contains the shapes' glow */
+}
+
+.info-title {
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 1.2;
+}
+
+.info-subtitle {
+    font-size: 1.1rem;
+    color: #64748b;
+    margin-top: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.info-features {
+    list-style: none;
+    padding-left: 0;
+}
+
+.info-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 1.5rem;
+}
+
+.info-features i {
+    font-size: 1.5rem;
+    color: #4f46e5;
+    margin-top: 5px;
+}
+
+.info-features strong {
+    display: block;
+    font-weight: 600;
+}
+
+.info-features span {
+    color: #64748b;
+    font-size: 0.9em;
+}
+
+/* Animated Shapes */
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(79, 70, 229, 0.2), rgba(168, 85, 247, 0.2));
+    filter: blur(20px);
+    z-index: -1;
+    animation: floatAnimation 15s infinite alternate ease-in-out;
+}
+
+.shape1 {
+    width: 200px;
+    height: 200px;
+    top: 10%;
+    left: 15%;
+    animation-duration: 12s;
+}
+
+.shape2 {
+    width: 300px;
+    height: 300px;
+    bottom: 5%;
+    right: 10%;
+    animation-duration: 18s;
+    animation-delay: -5s; /* Start at a different point in the animation */
+}
+
+.shape3 {
+    width: 150px;
+    height: 150px;
+    top: 50%;
+    left: 40%;
+    animation-duration: 15s;
+    border-radius: 30%;
+}
+
+/* Keyframes for the floating animation */
+@keyframes floatAnimation {
+    from {
+        transform: translateY(0px) rotate(0deg);
+    }
+    to {
+        transform: translateY(-40px) rotate(45deg);
+    }
+}
+
+/* Forgot Password Link */
+.forgot-password-link {
+    font-size: 0.85em;
+    color: #4f46e5;
+    text-decoration: none;
+    font-weight: 500;
+}
+.forgot-password-link:hover {
+    text-decoration: underline;
+}
+
+/* On mobile, the info panel is hidden by default with d-none d-md-block */
+/* You could add a media query to show it below the form if you wanted */
+@media (max-width: 767.98px) {
+    .info-panel {
+        display: none; /* Explicitly hide for clarity */
+    }
+}
+
+
